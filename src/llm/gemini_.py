@@ -20,9 +20,9 @@ SAFETY_SETTINGS = {
                 HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE
         }
 
-from tools.base import Generator
+from src.base import Generator
 
-class GeminiGenerator(Generator): 
+class GeminiGenerator(Generator):
 
     def __init__(self, 
                 api_key: Optional[str]=None,

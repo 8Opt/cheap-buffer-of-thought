@@ -1,4 +1,6 @@
-game24='''
+"Test templates"
+
+GAME24='''
 from itertools import permutations, product
 from sympy import symbols, simplify
 
@@ -27,7 +29,7 @@ print(find_solution(numbers))
 
 
 
-checkmate = '''
+CHECKMATE = '''
 import chess
 
 def find_checkmate_move(moves_san):
@@ -76,7 +78,7 @@ print(checkmate_move)
 '''
 
 
-word_sorting = '''
+WORD_SORTING = '''
 def sort_words(words):
     """
     Sorts a list of words alphabetically and returns them as a single line of text separated by spaces.

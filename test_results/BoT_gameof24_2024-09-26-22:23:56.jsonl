@@ -1,0 +1,98 @@
+{"input": "2 5 8 11", "result": "(2 * (5 + 11)) - 8\n"}
+{"input": "2 4 5 6", "result": "None\n"}
+{"input": "4 4 7 10", "result": "(4 + 4) * (10 - 7)\n"}
+{"input": "1 2 8 13", "result": "Solution found: ((a + b) + c) + d\n"}
+{"input": "2 2 8 8", "result": "((2 + 2) * 8) - 8\n"}
+{"input": "2 6 8 12", "result": "((2 * 8) - 12) * 6\n"}
+{"input": "3 3 7 12", "result": "3 * ((3 - 7) + 12)\n"}
+{"input": "2 6 8 13", "result": "((2 * 13) + 6) - 8\n"}
+{"input": "2 2 5 12", "result": "(2 + (2 * 5)) + 12\n"}
+{"input": "6 7 10 12", "result": "(6 / (10 - 7)) * 12\n"}
+{"input": "3 4 9 13", "result": "3 * ((4 - 9) + 13)\n"}
+{"input": "1 2 2 9", "result": "((1 + 2) + 9) * 2\n"}
+{"input": "2 3 6 6", "result": "((2 + 3) * 6) - 6\n"}
+{"input": "6 6 7 12", "result": "(6 * 7) - (6 + 12)\n"}
+{"input": "1 2 6 10", "result": "((1 + 2) * 10) - 6\n"}
+{"input": "1 3 5 9", "result": "((1 * 3) * 5) + 9\n"}
+{"input": "2 3 10 12", "result": "((2 + 10) * 3) - 12\n"}
+{"input": "3 3 4 11", "result": "3 - (3 * (4 - 11))\n"}
+{"input": "6 11 12 13", "result": "((6  +  6)  +  6)  +  6\n"}
+{"input": "4 4 8 12", "result": "(4-12)+(4*8)\n"}
+{"input": "2 3 6 13", "result": "No Python code found in the provided string."}
+{"input": "1 5 12 12", "result": "(12 * 12) / (1 + 5)\n"}
+{"input": "4 9 10 13", "result": "No solution found.\n"}
+{"input": "7 8 8 12", "result": "((7 + 8) - 12) * 8\n"}
+{"input": "2 2 7 12", "result": "2 * 7 - 2 * 12\n"}
+{"input": "2 3 4 9", "result": "((2) / (3) * (4)) * (9)\n"}
+{"input": "2 6 7 11", "result": "((7 - 6) + 11) * 2\n"}
+{"input": "2 3 3 10", "result": "3 * (3 + (10 / 2))\n"}
+{"input": "5 5 8 10", "result": "No solution found.\n"}
+{"input": "4 5 10 12", "result": "((4 * 5) / 10) * 12\n"}
+{"input": "4 8 11 13", "result": "4 * ((8 + 11) - 13)\n"}
+{"input": "1 3 7 10", "result": "(1 + (3 * 10)) - 7\n"}
+{"input": "5 9 12 12", "result": "((5 + 9) - 12) * 12\n"}
+{"input": "1 5 9 13", "result": "(1 + 5) * (13 - 9)\n"}
+{"input": "2 7 12 13", "result": "(2 * (13 - 7)) + 12\n"}
+{"input": "5 8 8 8", "result": "(5 * 8) - (8 + 8)\n"}
+{"input": "1 6 6 6", "result": "No solution found.\n"}
+{"input": "1 2 7 11", "result": "((2 * 7) - 1) + 11\n"}
+{"input": "2 5 10 10", "result": "((2 + 10) / 5) * 10\n"}
+{"input": "4 4 9 12", "result": "(4 + 4) * (12 - 9) = 24, Expressing as a solution of 24 for four specific input 4 4 9 & 12 combination using simple evaluated implementation using 24 = result after equating with sympy simplified output results as 24 equality in python equable implementation as one input  values combination of math equation matching sympy & python implementation based equating with math library outcome of logic operation equating with predefined logic operation - 24\n"}
+{"input": "2 5 7 7", "result": "No solution found.\n"}
+{"input": "3 4 6 6", "result": "((3 * 4) + 6) + 6\n"}
+{"input": "4 5 6 8", "result": "No solution found\n"}
+{"input": "1 4 4 8", "result": "((1 * 4) * 4) + 8\n"}
+{"input": "1 4 5 13", "result": "(1 - 4) * (5 - 13)\n"}
+{"input": "1 3 9 9", "result": "((9 - 1) / 3) * 9\n"}
+{"input": "3 3 6 7", "result": "No solution found.\n"}
+{"input": "1 2 4 7", "result": "((1 - 2) + 7) * (4)\n"}
+{"input": "1 4 4 11", "result": "No solution found.\n"}
+{"input": "1 5 10 11", "result": "((1 + 11) / 5) * 10\n"}
+{"input": "4 5 7 9", "result": "9 * 5 * 5 / (7 - 4)\n"}
+{"input": "4 7 9 13", "result": "24\n"}
+{"input": "3 9 10 13", "result": "(10 + (3 * 9)) - 13\n"}
+{"input": "6 9 12 13", "result": "((6 + 9) - 13) * 12\n"}
+{"input": "6 7 8 9", "result": "6 * (8 / (9 - 7))\n"}
+{"input": "3 6 9 12", "result": "((3 * 6) / 9) * 12\n"}
+{"input": "5 6 6 8", "result": "6 - ((5 - 8) * 6)\n"}
+{"input": "2 4 8 9", "result": "8 * (9 - (2 + 4))\n"}
+{"input": "2 4 6 12", "result": "((2 + 4) * 6) - 12\n"}
+{"input": "1 9 10 13", "result": "(1 - 9) * (10 - 13)\n"}
+{"input": "3 4 8 12", "result": "(3 * (4 + 8)) - 12\n"}
+{"input": "5 8 11 12", "result": "(5 + 11) * (12 / 8)\n"}
+{"input": "4 10 12 13", "result": "24\n"}
+{"input": "2 4 6 7", "result": "(2 + (4 * 7)) - 6\n"}
+{"input": "1 6 6 6", "result": "((6 - 1) * 6) - 6\n"}
+{"input": "6 9 9 11", "result": "6 - (9 * (9 - 11))\n"}
+{"input": "7 9 9 13", "result": "(9, 7, 9, 13) (((9 - 7) + 9) + 13 = 24)\n"}
+{"input": "3 3 9 12", "result": "(3 * (3 + 9)) - 12\n"}
+{"input": "5 6 8 10", "result": "((5 * 6) * 8) / 10 = 24\n"}
+{"input": "6 8 8 12", "result": "6 * ((8.0 + 8.0) - 12)\n"}
+{"input": "3 5 7 10", "result": "3 * ((5 - 7) + 10)\n"}
+{"input": "2 3 4 7", "result": "((2 - 3) + 7) * 4\n"}
+{"input": "1 7 9 11", "result": "An error occurred: list index out of range"}
+{"input": "1 3 6 11", "result": "((6 + 1) - 3) * 6\n"}
+{"input": "5 6 7 13", "result": "No solution found.\n"}
+{"input": "2 4 9 12", "result": "2 * (4 * (12 - 9))\n"}
+{"input": "4 6 6 9", "result": "(4 * 9) - (6 + 6)\n"}
+{"input": "1 11 11 13", "result": "No solution found.\n"}
+{"input": "4 5 6 10", "result": "(4 + (5 * 6)) - 10\n"}
+{"input": "7 7 8 11", "result": "((7 + 7) - 11) * 8\n"}
+{"input": "1 7 10 13", "result": "(1 + 7) * (13 - 10)\n"}
+{"input": "2 2 8 9", "result": "((2 * 9) - 2) + 8\n"}
+{"input": "3 4 6 8", "result": "(4 + 8) * 6 / 3\n"}
+{"input": "6 10 12 13", "result": "No solution found.\n"}
+{"input": "1 8 10 11", "result": "(1 + 11) * (10 - 8) = 24\n"}
+{"input": "5 10 12 13", "result": "((5 + 10) - 13) * 12\n"}
+{"input": "1 3 8 13", "result": "((1 * 3) + 8) + 13\n"}
+{"input": "3 4 6 11", "result": "24\n"}
+{"input": "2 3 9 10", "result": "((2 + 3) + 9) + 10\n"}
+{"input": "5 5 8 13", "result": "(5 - 8) * (5 - 13)\n"}
+{"input": "1 5 6 7", "result": "1 + 5 * 6 - 7\n"}
+{"input": "4 6 6 9", "result": "No solution found.\n"}
+{"input": "5 8 10 11", "result": "((8 - 5) + 10) + 11\n"}
+{"input": "6 7 8 11", "result": "6 * ((7 + 8) - 11)\n"}
+{"input": "2 3 6 9", "result": "((2 + 6) / 3) * 9\n"}
+{"input": "2 4 6 11", "result": "(((4 - 2) + ((11))) + ((11)\n"}
+{"input": "2 3 4 7", "result": "((2 - 3) + 7) * 4\n"}
+{"input": "1 2 3 13", "result": "1 + ((2 * 13) - 3)\n"}

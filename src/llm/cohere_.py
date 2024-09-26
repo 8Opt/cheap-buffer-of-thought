@@ -7,13 +7,13 @@ try:
 except ImportError as ie:
     raise ImportError("`cohere` is not installed. Please try `pip install cohere`!") from ie
 
-from tools.base import Generator
+from src.base import Generator
 
 
 class CohereGenerator(Generator):
-    def __init__(self, model_name, api_key, n=8, max_tokens=512, temperature=0.7, p=1, frequency_penalty=0.0, presence_penalty=0.0, stop=['\n\n\n'], wait_till_success=False):
-        super().__init__(model_name, api_key)
-        self.cohere = cohere.Cohere(self.api_key)
+    def __init__(self, model_name:str, api_key:str, n=8, max_tokens=512, temperature=0.7, p=1, frequency_penalty=0.0, presence_penalty=0.0, stop=['\n\n\n'], wait_till_success=False):
+        super().__init__(api_key, model_name)
+        self.cohere = cohere.Client(self.api_key)
         self.n = n
         self.max_tokens = max_tokens
         self.temperature = temperature
@@ -29,14 +29,14 @@ class CohereGenerator(Generator):
         text = response.generations[0].text
         return text
     
-    def generate(self, prompt):
+    def generate(self, query:str, system_prompt=None, text_return:bool=True, **kwargs):
         texts = []
         for _ in range(self.n):
             get_result = False
             while not get_result:
                 try:
-                    result = self.cohere.generate(
-                        prompt=prompt,
+                    result = self.cohere.chat(
+                        prompt=query,
                         model=self.model_name,
                         max_tokens=self.max_tokens,
                         temperature=self.temperature,
@@ -52,6 +52,7 @@ class CohereGenerator(Generator):
                         time.sleep(1)
                     else:
                         raise e
-            text = self.parse_response(result)
+            if text_return: 
+                text = self.parse_response(result)
             texts.append(text)
         return texts

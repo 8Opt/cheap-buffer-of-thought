@@ -12,7 +12,7 @@ except ImportError:
         "`pip install 'groq'`."
     )
 
-from tools.base import Generator
+from src.base import Generator
 
 SUPPORTED_MODEL = {
     "llama3-8b": "llama3-8b-8192",
@@ -31,10 +31,6 @@ class GroqGenerator(Generator):
                 ):
                 
         api_key = api_key or os.getenv("GROQ_API_KEY")
-                    
-        if model_name not in SUPPORTED_MODEL:
-            raise ValueError(f"Your input {model_name} is not supported. We support {', '.join(SUPPORTED_MODEL)}")
-
         super().__init__(api_key=api_key, model_name=model_name)
         
         self.model = Groq(api_key=api_key, max_retries=max_retries)

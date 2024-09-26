@@ -6,7 +6,7 @@ try:
 except ImportError as ie:
     raise ImportError("`openai` is not installed. Please try `pip install openai`!") from ie
 
-from tools.base import Generator
+from src.base import Generator
 
 SUPPORTED_MODEL = [
                 "Meta-Llama-3.1-8B-Instruct",          # CL-OL: 8192-1000
@@ -49,12 +49,12 @@ class SambaNovaGenerator(Generator):
         else:
             messages = [{"role": "user", "content": query}]
 
-        completion = self.client.chat.completions.create(
+        response = self.client.chat.completions.create(
         model=self.model_name,
         messages=messages,
         stream=True,
         **kwargs,
         )
-        if text_return: 
-            response = self.parse_response(completion)
+        if text_return:
+            response = self.parse_response(response)
         return response

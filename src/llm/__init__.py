@@ -1,16 +1,16 @@
 "Calling all generators"
 
-from tools.llm.cohere_ import CohereGenerator
-from tools.llm.gemini_ import GeminiGenerator
-from tools.llm.groq_ import GroqGenerator
-from tools.llm.sambanova import SambaNovaGenerator
-from tools.llm.openai_ import OpenAIGenerator
+from src.llm.cohere_ import CohereGenerator
+from src.llm.gemini_ import GeminiGenerator
+from src.llm.groq_ import GroqGenerator
+from src.llm.sambanova import SambaNovaGenerator
+from src.llm.openai_ import OpenAIGenerator
 
 
 class GeneratorFactory: 
     "Building a factory of generators"
     @staticmethod
-    def build_generator(provider, api_key, model_name):
+    def call_generator(provider, api_key, model_name):
         "Calling each generator based on its provider, api_key and model_name"
         try:
             match provider:
