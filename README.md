@@ -9,10 +9,12 @@ This repository offers a fresh take on the code from [the original Buffer-of-Tho
 3. Flexibility and Adaptability: This code's ability to work with various LLMs allows users to tailor the reasoning process to specific tasks and desired outcomes.
 
 
-## 🚩 New Updates 
+## Roadmaps
 
 - [ ] Integrating Leading Cloud-Based LLM Services (OpenAI, Cohere, Gemini, SambaNova, Groq).
-- [ ] Inegrate On-Premise LLM Solutions (Ollama). 
+- [ ] Integrating On-Premise LLM Solutions (Ollama, HuggingFace (tiny models, small models, large models)). 
+- [ ] Adding more templates. 
+
 
 ## Evaluation with Buffer of Thoughts
 
@@ -67,13 +69,8 @@ python validate_results.py --task_name 'gameof24' --test_path 'The path to the .
 
 This will print out the accuracy of the selected task on your relevant .jsonl file.
 
-## 📖 BibTeX
+---
 
-```
-@article{yang2024buffer,
-  title={Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models},
-  author={Yang, Ling and Yu, Zhaochen and Zhang, Tianjun and Cao, Shiyi and Xu, Minkai and Zhang, Wentao and Gonzalez, Joseph E and Cui, Bin},
-  journal={arXiv preprint arXiv:2406.04271},
-  year={2024}
-}
-```
+You guys can visit me via: [GitHub](https://github.com/MinLee0210) | [LinkedIn](www.linkedin.com/in/minhle007) | Medium | [Substack](https://minhleduc.substack.com/) 
+Or contact me via: 
++ Gmail: minh.leduc.0210@gmail.com

@@ -1,8 +1,9 @@
 import json
-from pipeline import BoT
 import argparse
 import os
 import datetime
+
+from src.pipeline import BoT
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--task_name',type=str,default='gameof24',choices=['gameof24','checkmate','wordsorting'])

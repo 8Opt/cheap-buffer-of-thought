@@ -5,7 +5,7 @@
 - [ ] Cohere. 
 - [ ] OpenAI. 
 - [ ] SambaNova. 
-- [ ] Groq. 
+- [ x ] Groq. 
 - [ ] Ollama.
 - [ ] HuggingFace. 
 
