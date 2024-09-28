@@ -1,3 +1,5 @@
+"Pipeline for buffer-of-thought"
+
 from src.llm import GeneratorFactory
 from src.helper.meta_distill import extract_and_execute_code
 from src.helper.utils import set_logger
@@ -12,8 +14,8 @@ class BoT:
                  provider:str=None,
                  api_key:str=None,
                  model_name:str=None, 
-                 need_check:bool=False, 
-                 is_logging:bool=True):
+                 need_check:bool=False
+                ):
         self.api_key = api_key
         self.model_name = model_name
         self.provider = provider
@@ -22,8 +24,8 @@ class BoT:
         self.problem_id = problem_id  # For testing purposes only
         self.need_check = need_check
 
-        if is_logging: 
-            self.logger = set_logger()
+        self.logger = set_logger(provider=provider, 
+                                 model_name=model_name)
 
     def update_query(self, new_input):
         """Update nput"""
@@ -31,9 +33,9 @@ class BoT:
 
     def problem_distillation(self):
         "Distil problem"
-        print(f"User prompt: {self.query}")
+        self.logger.info(f"User prompt: {self.query}")
         self.distilled_information = self.llm.generate(query=self.query, system_prompt=META_DISTILLER_PROMPT)
-        print(f"Distilled information: {self.distilled_information}")
+        self.logger.info(f"Distilled information: {self.distilled_information}")
 
     def buffer_retrieve(self):
         "Retrieve template from buffer"
@@ -57,7 +59,7 @@ class BoT:
         self.inspector_prompt = INSPECTOR_PROMPT
 
         self.result = self.llm.generate(self.instantiation_instruct, self.formated_input)
-        print(f"Instantiated reasoning result: {self.result}")
+        self.logger.info(f"Instantiated reasoning result: {self.result}")
 
         if self.problem_id in problem_id_list:
             self.final_result, code_str = extract_and_execute_code(self.result)
@@ -72,10 +74,10 @@ class BoT:
                 self.inter_result = self.final_result
 
                 while ('An error occurred' in self.inter_result) or (self.inter_result == '') or (self.inter_result == 'None'):
-                    print('The code cannot be executed correctly. Continuing the edit phase:', self.inter_result)
-                    print('The problem code is:', code_str)
+                    self.logger.info('The code cannot be executed correctly. Continuing the edit phase:', self.inter_result)
+                    self.logger.info('The problem code is:', code_str)
                     self.inter_input = self.llm.generate(self.inspector_prompt, self.inter_input)
-                    print(self.inter_input)
+                    self.logger.info(self.inter_input)
                     self.inter_result, inter_code_str = extract_and_execute_code(self.inter_input)
                     self.inter_input = f"""
                     User_input: {self.query}
@@ -89,7 +91,7 @@ class BoT:
 
                 self.final_result = self.inter_result
 
-            print(f"The result of code execution: {self.final_result}")
+            self.logger.info(f"The result of code execution: {self.final_result}")
         else:
             self.final_result = self.result
 

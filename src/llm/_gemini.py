@@ -60,13 +60,13 @@ class GeminiGenerator(Generator):
 
     def generate(self, query:str, system_prompt=None, text_return:bool=True, **kwargs):
         try:
-            messages = [{"role": "user", "parts": query}]
-            if system_prompt:
-                sys_msg = {
-                    "role": "system", 
-                    "parts": [system_prompt]
-                }
-                messages.insert(0, sys_msg)
+            if system_prompt: 
+                messages = [
+                    {'role': 'model', 'parts': system_prompt}, 
+                    {'role': 'user', 'parts': query}
+                ]
+            else: 
+                messages = [{"role": "user", "parts": query}]
             response = self.model.generate_content(messages)
             if text_return:
                 return response.text
