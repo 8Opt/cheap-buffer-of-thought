@@ -3,11 +3,10 @@
 api_key=$(printenv GROQ_API_KEY)
 
 echo "Running experiment ..."
-python run_benchmarks.py    --task_name="gameof24" \
+python run_benchmarks.py    --task_name="checkmate" \
                             --provider="groq"   \
-                            --api_key="$api_key" \
+                            --api_key="${api_key}" \
                             --model_name="llama-3.2-1b-preview"\
-                            --clean_response=True
 
 # You have to change the `--test_path` according to your test
 # echo "Validating ..."

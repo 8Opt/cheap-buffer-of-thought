@@ -43,7 +43,6 @@ def extract_and_execute_code(text):
         
         # Execute the code
         try:
-            # pylint: disable-next=exec-used
             exec(code_str, globals())
         except Exception as e:
             # Primary output

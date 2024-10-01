@@ -4,7 +4,6 @@ import os
 import datetime
 
 from src.pipeline import BoT
-from src.processing import clean
 
 def get_user_prompt(task_name):
     """
@@ -35,18 +34,18 @@ def get_user_prompt(task_name):
     return benchmark_dict.get(task_name)
 
 def get_benchmark_path(task_name): 
-        path_dict = {
+    path_dict = {
 
-            'gameof24':'benchmarks/gameof24.jsonl',
+        'gameof24':'benchmarks/gameof24.jsonl',
 
-            'checkmate':'benchmarks/CheckmateInOne.jsonl',
+        'checkmate':'benchmarks/CheckmateInOne.jsonl',
 
-            'wordsorting':'benchmarks/word_sorting.jsonl'
+        'wordsorting':'benchmarks/word_sorting.jsonl'
 
-        }
-        return path_dict.get(task_name)
+    }
+    return path_dict.get(task_name)
 
-def run_task(task_name, api_key, model_name, provider, clean_response):
+def run_task(task_name, api_key, model_name, provider):
     """
     Runs the specified task using the provided configuration.
 
@@ -55,7 +54,6 @@ def run_task(task_name, api_key, model_name, provider, clean_response):
         api_key (str): The API key for the chosen provider (if applicable).
         model_name (str): The model name to use.
         provider (str): The provider of the large language model.
-        clean_response (bool): Whether to clean the response from the LLM.
     """
     now = datetime.datetime.now()
     timestamp_str = now.strftime("%Y-%m-%d-%H:%M:%S")
@@ -82,8 +80,8 @@ def run_task(task_name, api_key, model_name, provider, clean_response):
         buffer_of_thought.update_query(user_input)
         result = buffer_of_thought.generate()
 
-        if clean_response:
-            result = clean(result)
+        # if clean_response:
+        #     result = clean(result)
 
         json_result = {'input': query, 'result': result}
         with open(f'./{output_dir}/BoT_{provider}_{model_name}_{task_name}_{timestamp_str}.jsonl', 'a+', encoding='utf-8') as file:
@@ -98,7 +96,7 @@ if __name__ == "__main__":
     parser.add_argument('--provider', default='ollama', type=str, help='Input your provider here', choices=['cohere', 'openai', 'sambanova', 'gemini', 'groq', 'ollama'])
     parser.add_argument('--api_key', default=None, type=str, help='Input your API key here')
     parser.add_argument('--model_name', type=str, default='gpt-4o', help='Input model id here, if use local model, input the path to the local model')
-    parser.add_argument('--clean_response', type=bool, default=True, help="Responses from LLM may contain many whitespaces and unexpected symbols for the result, this method helps to clean those out")
+    # parser.add_argument('--clean_response', type=bool, default=True, help="Responses from LLM may contain many whitespaces and unexpected symbols for the result, this method helps to clean those out")
     args = parser.parse_args()
 
-    run_task(args.task_name, args.api_key, args.model_name, args.provider, args.clean_response)
+    run_task(args.task_name, args.api_key, args.model_name, args.provider)

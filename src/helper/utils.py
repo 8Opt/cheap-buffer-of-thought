@@ -29,7 +29,7 @@ class DualHandler(logging.Handler):
     def __init__(self, dir:str='log',filename=None, level=logging.NOTSET):
         logging.Handler.__init__(self, level)
         self.console_handler = logging.StreamHandler()
-        self.file_handler = logging.FileHandler(os.path.join(dir, filename), mode='a')
+        self.file_handler = logging.FileHandler(os.path.join(dir, filename), mode='a+')
         self.formatter = logging.Formatter('[%(asctime)s] - %(levelname)7s --- %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
         self.console_handler.setFormatter(self.formatter)
         self.file_handler.setFormatter(self.formatter)
@@ -45,7 +45,7 @@ def set_logger(provider:str, model_name:str, level:int=logging.DEBUG) -> logging
     logger.setLevel(level)
 
     file_path = f"{provider}_{model_name}.log"
-    dual_handler = DualHandler(file_path)
+    dual_handler = DualHandler(filename=file_path)
     logger.addHandler(dual_handler)
 
     return logger
